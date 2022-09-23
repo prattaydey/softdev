@@ -23,26 +23,19 @@ import random as rng
 
 krewes = {2:["a","b","c"], 7:["d","e","f"], 8:["g","h","i"]}
 
-# first, use random to randomly choose the class the random devo will be chosen from 
-def generateRandomClass():
-    selected = rng.randint(1,3)
-    randClass = 0
-    if selected == 1:
-        randClass = 2
-    elif selected == 2:
-        randClass = 7
-    else:
-        randClass = 8 
-    return randClass
-
-# using the genenerated class, find the length of that list and randomly select from it. Then, return the chosen devo! 
 def generateRandomDev():
-    selectedClass = generateRandomClass()
+    selected = rng.randint(1,3)
+    randPD = 0
+    if selected == 1:
+        randPD = 2
+    elif selected == 2:
+        randPD = 7
+    else:
+        randPD = 8 
+    selectedClass = randPD
     fullClass = krewes[selectedClass]
     selectedDevo = rng.randint(0, len(fullClass)-1)
-    #print(selectedClass)
-    #print(selectedDevo) 
+    print(selectedClass)
     return fullClass[selectedDevo] 
-    
-print(generateRandomDev())
- 
+
+print("Randomized devo " + generateRandomDev())
