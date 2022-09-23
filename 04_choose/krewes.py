@@ -7,16 +7,18 @@ time spent:
 DISCO:
 - You can have multiple key-value pairs for an index
 - You can access a specific value by entering its index after the key 
-- Using randint will return integers while simply using random will return floats 
+- Using randint will return integers while simply using random will return floats
+- list() compiles all keys within a dictionary into one list
+
 QCC:
+- How do we create more test cases for a method that returns a randomized result?
+- Is it better to split up a program into multiple helper functions or one larger function, if they both have the same result.
+
 OPS SUMMARY:
 - We're thinking of importing the random python library for our RNG
 - We're thinking of using randint(a,b) twice. 
-    - The first time we'll use it to find a random key
+    - The first time we'll use it to find a random key after using list() to compile a list of all keys
     - The 2nd time we'll find a random value within that key
-- We will have two methods
-    - The first method will use random to generate the class (2/7/8) that the random dev will be selected from
-    - The next will use random to provide the index of a randomly selected dev inside of the selected class
 '''
 
 import random as rng
@@ -34,6 +36,6 @@ def generateRandomDev():
     randKey = keys[randIndex]
     fullPeriod = krewes[randKey]
     selectedDevo = rng.randint(0, len(fullPeriod)-1)
-    return fullPeriod[selectedDevo]
+    return str(randKey) + ": " + fullPeriod[selectedDevo]
 
 print( generateRandomDev() )
