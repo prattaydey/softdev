@@ -16,8 +16,23 @@ HOW THIS SCRIPT WORKS:
 '''
 
 import csv
+import random
 
 with open("occupations.csv", "r") as file:
     reader = csv.DictReader(file)
+    
+    
+    list_dict = []
     for row in reader:
-        print(row["Job Class"], row["Percentage"]) 
+        list_dict.append(row) 
+        #print(row["Job Class"], row["Percentage"])
+    
+def pickOne(list1):
+    x = 100.0
+    for i in list1:
+        if (random.uniform(0.0, x) < float(i["Percentage"])):
+            return i["Job Class"]
+        else:
+            x -= float(i["Percentage"])
+    
+print(pickOne(list_dict))
