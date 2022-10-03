@@ -20,19 +20,29 @@ import random
 
 with open("occupations.csv", "r") as file:
     reader = csv.DictReader(file)
-    
-    
     list_dict = []
+
     for row in reader:
-        list_dict.append(row) 
+        # print(row)
+        # print(row["Job Class"])
+        # compiles all the different key-value pairs into one dictionary
+        list_dict.append(row)
         #print(row["Job Class"], row["Percentage"])
-    
-def pickOne(list1):
-    x = 100.0
-    for i in list1:
-        if (random.uniform(0.0, x) < float(i["Percentage"])):
-            return i["Job Class"]
-        else:
-            x -= float(i["Percentage"])
-    
-print(pickOne(list_dict))
+
+    # removes Total row
+    list_dict.pop()
+
+
+def weighted_pick(dict):
+    randnum = random.random() * 100
+    current_sum = 0
+    row = 0
+    for key in dict:
+        if (row != 0):
+            current_sum += float(key["Percentage"])
+        if (current_sum >= randnum):
+            return key["Job Class"]
+        row += 1
+
+
+print(weighted_pick(list_dict))
