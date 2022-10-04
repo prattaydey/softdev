@@ -3,7 +3,7 @@ Prattay Dey, Emerson Gelobter
 SoftDev
 06_py-csv
 2022-09-29
-time spent: _______
+time spent: 1.0 hr
 
 DISCO:
 - When reading csv files, we can use DictReader() instead of reader(). This function is like a regular reader but also maps each row to a key-value pair.
