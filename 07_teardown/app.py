@@ -4,6 +4,7 @@ SoftDev
 04_choose
 2022-09-22
 time spent: 0.5 hr
+'''
 
 from flask import Flask
 
@@ -16,6 +17,7 @@ def hello_world():
 
 app.run()  # Q5: Where have you seen similar constructs in other languages?
 
+'''
 DISCO:
 - You can't run this script in Thonny, you have to run it via terminal to open a webpage
 QCC:
