@@ -26,7 +26,7 @@ QCC:
 - What is the significance of the front-slash?
 
 0. 
-1. With a double front-slash, we can make comments in Java.
+1. The front slash looks like the symbol you use in a directory tree in Terminal
 2. It will print to a webpage on a browser
 3. It will print the return statement
 4. It will appear on the webpage because we ran it to confirm
