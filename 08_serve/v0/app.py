@@ -10,7 +10,7 @@ app = Flask(__name__) # __name__ set to current module that is being run. Allows
 
 @app.route("/") #  '/' points to the root, routing the function to the root URL.
 def hello_world():
-    print(__name__) #
+    print(__name__) # 
     return "No hablo queso!"  #
 
 app.run()  # runs the module

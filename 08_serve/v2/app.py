@@ -1,7 +1,9 @@
-# Clyde 'Thluffy' Sinclair
+# Whole Lotta Coding: Prattay, Aden, Emerson
 # SoftDev
 # Oct 2022
 
+# Prediction: We think it will go on the title of the taskbar
+# Outcome: We were wrong, it doesn't seem to appear anywhere
 from flask import Flask
 app = Flask(__name__) #create instance of class Flask
 
