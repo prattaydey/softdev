@@ -1,14 +1,14 @@
-# Clyde 'Thluffy' Sinclair
+# Whole Lotta Coding: Prattay, Aden, Emerson
 # SoftDev
 # Oct 2022
 
-# DEMO 
+# DEMO
 # basics of /static folder
 
 from flask import Flask
-app = Flask(__name__) 
+app = Flask(__name__)
 
-@app.route("/")       
+@app.route("/")
 def hello_world():
     print("the __name__ of this module is... ")
     print(__name__)
