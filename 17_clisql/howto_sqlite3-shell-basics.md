@@ -1,14 +1,16 @@
 https://sqlite.org/cli.html
 
 General SQLite Information:
-    -Storage classes used:
+   -Storage classes used:  
+    
         null - Null value
         int - Signed integer stored in 0-8 bytes depending on magnitude
         real - Floating point value
         text - Text string, stored using database encoding
-        blob - BLOB (binary large object: up to several gigabytes) of data stored exactly as it was input
+        blob - BLOB (binary large object: up to several gigabytes) of data stored exactly as it was input  
+     
 
-    -SQL statements/commands need to be terminated with a semicolon
+   -SQL statements/commands need to be terminated with a semicolon
         If you don't input a semicolon and just press ENTER, sqlite3 will extend your command to the next line, allowing you to write multiline commands.
 
 To open SQLite3 Shell:
