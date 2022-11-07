@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 
-<!-- 
+<!--
 Team Jelly Jam Pancakes: Jacob, Jeremy, Prattay
 SoftDev
 Sessions Greetings
 Oct 2022
-time spent: ______ 
+time spent: ______
+-->
+
+<!--
+    Username: Pancake
+    Password: Syrup
 -->
 
 <html>
@@ -15,22 +20,31 @@ time spent: ______
   </head>
 
   <body>
-    <h1>
-      Team Jelly Jam Pancakes: Jacob, Jeremy, Prattay
-    </h1>
+    <h3>
+      Jelly Jam Pancakes - Jeremy Kwok, Jacob Guo, Prattay Dey
+      <br>
+      SoftDev
+      <br>
+      K19 -- Sessions Greetings
+      <br>
+      2022-10-18
+      <br>
+      time spent: 1.0
+    </h3>
 
 
     <h3>
-      Enter your login information below to proceed.
+      Login Page: Enter your username and password below to proceed.
     </h3>
-    <form action="/login" method="GET">
+    <form action="/auth", method="GET">
       <input type="text" name="username">
       <br>
       <input type="password" name="password">
-      <br><br>
+      <br>
       <input type="submit" name="sub1">
     </form>
     <br>
+    <h2> {{ message }} </h2>
   </body>
 
 </html>

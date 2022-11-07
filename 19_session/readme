@@ -2,4 +2,13 @@ Team Jelly Jam Pancakes: Jacob, Jeremy, Prattay
 SoftDev
 Sessions Greetings
 Oct 2022
-time spent: ______ 
+time spent: 2.0 hr
+
+QCC:
+- How do we print all the values within a session dictionary/object?
+
+DISCO:
+- We need a secret key to use cookies
+- "session" needs to be imported
+- Need to import redirect and url_for from flask library
+- Can import os to make a random session key each time

@@ -1,71 +1,84 @@
-#Team Jelly Jam Pancakes: Jacob, Jeremy, Prattay
-#SoftDev
-#Sessions Greetings
-#Oct 2022
-#time spent: ______
+# Jelly Jam Pancakes - Jeremy Kwok, Jacob Guo, Prattay Dey
+# SoftDev
+# 2022-11-06
+# time spent: 1.0
 
-from flask import Flask             #facilitate flask webserving
+#Username: Pancake
+#Password: Syrup
+
+from flask import Flask            #facilitate flask webserving
 from flask import render_template   #facilitate jinja templating
 from flask import request           #facilitate form submission
+from flask import session           #facilitate user sessions
+from flask import redirect, url_for #to redirect to a different URL
+import os
 
 app = Flask(__name__)    #create Flask object
-username = "JJP"
-password = "abc123"
+app.secret_key = os.urandom(32) #randomized string for key
 
+
+required_username = "Pancake"
+required_password = "Syrup"
+
+# checks to see if the user already has a session
 @app.route("/", methods=['GET', 'POST'])
-def disp_loginpage():
-    '''
-    print("\n\n\n")
-    print("***DIAG: this Flask obj ***")
-    print(app)
-    print("***DIAG: request obj ***")
-    print(request) # prints webpage address that is making the request
-    print("***DIAG: request.args ***")
-    print(request.form) #used for a POST request
-    #print(request.args) # used for a GET request
-    # print("***DIAG: request.args['username']  ***")
-    # print(request.args['username']) # results in a BadRequestKeyError
-    print("***DIAG: request.headers ***")
-    print(request.headers)
-    '''
-    return render_template( 'login.html' )
-
+def index():
+    if 'username' in session:
+        return render_template('response.html', username = session['username'], method = request.method)
+    return redirect(url_for('login'))
 
 @app.route("/login", methods=['GET', 'POST'])
-def authenticate():
-    
-    '''
-    print("\n\n\n")
-    print("***DIAG: this Flask obj ***")
-    print(app)
-    print("***DIAG: request obj ***")
-    print(request)
-    print("***DIAG: request.args ***")
-    print(request.args)
-    print("***DIAG: request.args['username']  ***")
-    print(request.args['username'])
-    print("***DIAG: request.headers ***")
-    print(request.headers)
+def login():
+    print(session)
+    return render_template('login.html')
 
-    #Use this to force a post request
-    print("***DIAG: request.form ***")
-    print(request.form)
-    #print(request.args['username'] + request.args['sub1'])
-    #return render_template('response.html')
-    #print(request.form)
-    '''
+
+@app.route("/auth", methods=['GET', 'POST'])
+def authenticate():
+    # checks to see if the user enters a valid login, and creates a new session if so
     if request.method == 'GET':
-        if request.args['username'] == username and request.args['password'] == password:
+        input_username = request.args['username']
+        input_password = request.args['password']
+
+        if input_username == required_username and input_password == required_password:
+            session['username'] = request.args['username'] # stores username in session
             return render_template('response.html', username = request.args['username'], password = request.args['password'], method = request.method)  #For 'get'
 
-        else: 
-            if request.args['username'] == username:
-                if request.args['password'] != password:
-                    return render_template('fail.html', username = request.args['username'], method = request.method) #password fail
-                return render_template('fail.html', username = request.args['username'], )
+        else:
+            error_msg = ''
+            if input_username != required_username:
+                error_msg += "Username is incorrect. \n"
+            if input_password != required_password:
+                error_msg += "Password is incorrect. \n"
+            error_msg += "Please try again."
+            return render_template('login.html', message = error_msg)
 
+
+    # same thing, just adjusted for POST requests
     if request.method == 'POST':
-        return render_template('response.html', username = request.form['username'], password = request.form['password'],  method = request.method)  #For 'post'
+        input_username = request.form['username']
+        input_password = request.form['password']
+
+        if input_username == required_username and input_password == required_password:
+            session['username'] = request.form['username'] # stores username in session
+            return render_template('response.html', username = request.form['username'], password = request.form['password'], method = request.method)  #For 'post'
+
+        else:
+            error_msg = ""
+            if input_username != required_username:
+                error_msg += "Username is incorrect. \n"
+            if input_password != required_password:
+                error_msg += "Password is incorrect. \n"
+            error_msg += "Please try again."
+            return render_template('login.html', message = error_msg)
+
+@app.route('/logout')
+def logout():
+    # remove the username from the session if it's there
+    session.pop('username', None)
+    return redirect(url_for('index'))
+
+
 
 if __name__ == "__main__": #false if this file imported as module
     #enable debugging, auto-restarting of server when this file is modified
