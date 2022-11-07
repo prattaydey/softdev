@@ -1,7 +1,7 @@
 # Jelly Jam Pancakes - Jeremy Kwok, Jacob Guo, Prattay Dey
 # SoftDev
 # 2022-11-06
-# time spent: 1.0
+# time spent: 2.0 hr
 
 #Username: Pancake
 #Password: Syrup
