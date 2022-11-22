@@ -12,10 +12,10 @@ def get_key():
 
 @app.route("/", methods=['GET'])
 def render():
-    url = f"https://api.nasa.gov/planetary/apod?api_key={ get_key() }"
+    url = "https://api.nasa.gov/planetary/apod?api_key=" + get_key()
     print(url)
     api_call = requests.get(url).json()
-    print(api_call)
+    #print(api_call)
 
     return render_template('main.html', img_url=api_call['url'], explanation=api_call['explanation'])
 
