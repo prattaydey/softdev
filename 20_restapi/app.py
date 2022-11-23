@@ -1,6 +1,5 @@
 from flask import Flask            #facilitate flask webserving
 from flask import render_template   #facilitate jinja templating
-from flask import request
 import requests
 
 app = Flask(__name__)
