@@ -24,3 +24,4 @@ DISCOS:
 QCCs:
     - The image of the Moutain is VERY big even though the source img is small. Either bootstrap images or the card class is altering the img pixel size to fit the entire page
     - It seems like there is going to be alot you need to memorize in order to use bootstrap css effectivly. 
+
