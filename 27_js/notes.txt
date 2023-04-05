@@ -5,17 +5,13 @@ K27 -- Basic functions in JavaScript
 
 DISCO
 -----------------------------------------------------------------
-* Ooooh, ___
-* Aaah-haa!  ____
-* ...
+* Can test JS functions in browser dev console. If NodeJS installed, can test directly in terminal w/ Node <file_name>.js
+* For Scheme, need parenths around the entire function itself when calling it, not only just the parameter
 =================================================================
 
 QCC
 -----------------------------------------------------------------
-* Why...?
-* Huh?
-* Teh whah now?
-* ...
+* Why is Scheme written with the operators at the front? Is there any advantage to it, because it just seems tedious
 =================================================================
 
 
