@@ -30,6 +30,7 @@ var drawRect = (e) => {
     var mouseX = e.offsetX;
     var mouseY = e.offsetY;
     console.log("mouseclick registered at ", mouseX, mouseY);
+    ctx.fillStyle="#ff0000";
     ctx.fillRect(mouseX, mouseY, 100,200);
 }
 
@@ -38,6 +39,7 @@ var drawCircle = (e) => {
     var mouseY = e.offsetY;
     console.log("mouseclick registered at ", mouseX, mouseY);
     ctx.beginPath();
+    ctx.fillStyle="#ff0000";
     ctx.arc(mouseX, mouseY, 50, 0, 2 * Math.PI);
     ctx.fill();
 }
