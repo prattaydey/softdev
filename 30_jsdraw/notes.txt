@@ -1,0 +1,12 @@
+Team Peanut Butter :: Prattay Dey, Brian Yang
+SoftDev pd07
+K30 -- JS Paint
+2023-04-24
+
+DISCO
+- There is no circle function built into js and you need to use the arc() function
+- clearRect() doesn't mean clear rectangles but rather clear this rectangle area (specified by parameter)
+- offsetX/offsetY provides the x/y coordinates
+
+QCC
+- What does stroke do? Adding it when drawing out the circle doesn't seem to do anything
