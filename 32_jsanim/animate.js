@@ -1,10 +1,11 @@
 // Team PreView :: Prattay Dey, Verit Li
 // SoftDev pd07
-// K31 -- canvas based JS animation
+// K32 -- canvas based JS animation
 // 2023-04-25t
 
 var c = document.getElementById("playground");
 var dotButton = document.getElementById("buttonCircle");
+var dvdButton = document.getElementById("dvd");
 var stopButton = document.getElementById("buttonStop");
 
 var ctx = c.getContext("2d");
@@ -16,6 +17,7 @@ ctx.fillStyle = "#00ffff"; // cyan
 var requestID;
 
 var clear = (e) => {
+    e.preventDefault(); // 
     ctx.clearRect(0, 0, e.width, e.height);
 }
 
@@ -49,6 +51,31 @@ var drawDot = () => {
       }
     }
      
+}
+
+var dvdLogoSetup = () => {
+    window.cancelAnimationFrame( requestID );
+
+    var rectWidth = 60;
+    var rectHeight = 40;
+
+    var RectX = Math.floor( Math.random() * 380);
+    var RectY = Math.floor( Math.random() * 420);
+
+    var xVel = 2;
+    var yVel = 2;
+
+    var logo = new Image();
+    logo.src = "logo_dvd.jpg";
+
+    var dvdLogo = () => {
+        ctx.clearRect(0, 0, c.width, c.height);
+        ctx.drawImage(rectX, rectY, rectWidth, rectHeight);
+        if ( rectX == 0 || rectX == 440){
+            
+        }
+    }
+
 }
 
 var stopIt = () => {
