@@ -4,5 +4,7 @@ K31 -- canvas based JS animation
 2023-04-25t
 
 DISCOS:
+- window.requestAnimationFrame() returns a requestID, which is passed as a param into window.cancelAnimationFrame()
 
 QCCs:
+- How make circle continue after 1 run? Loop???
